@@ -18,3 +18,28 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'OrderController@index');
+Route::get('/orders', 'OrderController@index')->name('list_orders');
+Route::group(['prefix' => 'orders'], function () {
+    Route::get('/pending', 'OrderController@pending')
+        ->name('list_orders')
+        ->middleware('auth');
+    Route::get('/show/{id}', 'OrderController@show')
+        ->name('show_order');
+    Route::get('/create', 'OrderController@create')
+        ->name('create_order')
+        ->middleware('can:create-order');
+    Route::post('/create', 'OrderController@store')
+        ->name('store_order')
+        ->middleware('can:create-order');
+    Route::get('/edit/{order}', 'OrderController@edit')
+        ->name('edit_order')
+        ->middleware('can:update-order,order');
+    Route::post('/edit/{order}', 'OrderController@update')
+        ->name('update_order')
+        ->middleware('can:update-order,order');
+    Route::get('/complete/{order}', 'OrderController@complete')
+        ->name('complete_order')
+        ->middleware('can:complete-order');
+});

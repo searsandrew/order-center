@@ -24,7 +24,7 @@ class RolesSeeder extends Seeder
             'slug' => 'employee',
             'permissions' => [
                 'update-order' => true,
-                'publish-order' => true,
+                'complete-order' => true,
             ]
         ]);
     }

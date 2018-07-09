@@ -37,8 +37,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('update-order', function ($user, Order $order) {
             return $user->hasAccess(['update-order']) or $user->id == $order->user_id;
         });
-        Gate::define('publish-order', function ($user) {
-            return $user->hasAccess(['publish-order']);
+        Gate::define('complete-order', function ($user) {
+            return $user->hasAccess(['complete-order']);
         });
         Gate::define('see-all-orders', function ($user) {
             return $user->inRole('employee');

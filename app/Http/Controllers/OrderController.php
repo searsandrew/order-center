@@ -13,4 +13,9 @@ class OrderController extends Controller
         $orders = Order::completed()->paginate();
         return view('orders.index', compact('orders'));
     }
+
+    public function create()
+    {
+        return view('orders.create');
+    }
 }

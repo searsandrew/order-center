@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'OrderController@index');
 Route::get('/orders', 'OrderController@index')->name('list_orders');
 Route::group(['prefix' => 'orders'], function () {
-    Route::get('/drafts', 'OrderController@drafts')
+    Route::get('/pending', 'OrderController@pending')
         ->name('list_orders')
         ->middleware('auth');
     Route::get('/show/{id}', 'OrderController@show')

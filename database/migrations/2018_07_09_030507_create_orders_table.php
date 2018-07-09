@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
-            $table->boolean('published')->default(false);
+            $table->boolean('completed')->default(false);
             $table->unsignedInteger('user_id');
             $table->timestamps();
 

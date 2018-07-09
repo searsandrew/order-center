@@ -39,7 +39,7 @@ Route::group(['prefix' => 'orders'], function () {
     Route::post('/edit/{order}', 'OrderController@update')
         ->name('update_order')
         ->middleware('can:update-order,order');
-    Route::get('/publish/{order}', 'OrderController@publish')
-        ->name('publish_order')
-        ->middleware('can:publish-order');
+    Route::get('/complete/{order}', 'OrderController@complete')
+        ->name('complete_order')
+        ->middleware('can:complete-order');
 });

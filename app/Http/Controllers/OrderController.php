@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\User;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
@@ -67,5 +68,10 @@ class OrderController extends Controller
         }
         $orders = $ordersQuery->paginate();
         return view('orders.pending', compact('orders'));
+    }
+
+    public function apiPending()
+    {
+        return Order::with('user')->uncompleted()->get();
     }
 }

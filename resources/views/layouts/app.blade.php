@@ -82,6 +82,7 @@
                 </div>
                 <div class="col-md-3 col-sm-12">
                     Sidebar
+                    <example-component></example-component>
                 </div>
             </main>
         </div>

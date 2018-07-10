@@ -12,7 +12,12 @@ class Order extends Model
 
     public function owner()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\User');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
     public function scopeCompleted($query)

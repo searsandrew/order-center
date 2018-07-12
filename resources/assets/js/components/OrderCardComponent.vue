@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12" v-for="order in orders" :key="order.id"> 
+        <div class="col-lg-3 col-md-4 col-sm-6" v-for="order in orders" :key="order.id"> 
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title"><a href="#">{{ order.title }}</a></h5>
@@ -19,8 +19,10 @@
                 orders: []
             }
         },
+        props: [ 'path' ],
         mounted() {
-            axios.get('/api/pending').then(response => this.orders = response.data);
+            let vm = this;
+            axios.get(this.path).then(response => this.orders = response.data);
         }
     }
 </script>

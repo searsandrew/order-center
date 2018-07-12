@@ -47333,10 +47333,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             orders: []
         };
     },
+    props: ['path'],
     mounted: function mounted() {
         var _this = this;
 
-        axios.get('/api/pending').then(function (response) {
+        var vm = this;
+        axios.get(this.path).then(function (response) {
             return _this.orders = response.data;
         });
     }
@@ -47356,7 +47358,7 @@ var render = function() {
     _vm._l(_vm.orders, function(order) {
       return _c(
         "div",
-        { key: order.id, staticClass: "col-lg-4 col-md-6 col-sm-12" },
+        { key: order.id, staticClass: "col-lg-3 col-md-4 col-sm-6" },
         [
           _c("div", { staticClass: "card mb-4" }, [
             _c("div", { staticClass: "card-body" }, [

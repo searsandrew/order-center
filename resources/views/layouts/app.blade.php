@@ -77,12 +77,8 @@
         </nav>
         <div class="container">
             <main class="py-4 row">
-                <div class="col-md-9 col-sm-12">
+                <div class="col-sm-12">
                     @yield('content')
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    Sidebar
-                    <example-component></example-component>
                 </div>
             </main>
         </div>

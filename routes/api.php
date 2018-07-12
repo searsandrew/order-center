@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/pending', 'OrderController@apiPending');
+Route::get('/completed', 'OrderController@apiCompleted');

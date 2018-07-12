@@ -9,6 +9,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: $primary;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.nav-item a, .navbar-light .navbar-nav .nav-link {
+  color: $secondary;
+}
+.nav-item a:hover, .navbar-light .navbar-nav .nav-link:hover {
+  color: darken( $secondary, 10% )
 }

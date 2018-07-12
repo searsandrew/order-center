@@ -74,4 +74,9 @@ class OrderController extends Controller
     {
         return Order::with('user')->uncompleted()->get();
     }
+
+    public function apiCompleted()
+    {
+        return Order::with('user')->completed()->get();
+    }
 }

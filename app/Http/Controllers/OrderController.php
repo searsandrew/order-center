@@ -56,8 +56,7 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $order = Order::completed()->findOrFail($id);
-        return view('orders.show', compact('order'));
+        return Order::with('user')->where('id', $id)->first();
     }
 
     public function pending()

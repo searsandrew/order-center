@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('order-cards', require('./components/OrderCardComponent.vue'));
+Vue.component('modal', require('./components/ModalComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
